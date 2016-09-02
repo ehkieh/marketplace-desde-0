@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/User.php
+// src/AppBundle/Entity/Persona.php
 
 namespace AppBundle\Entity;
 
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser
+class Persona extends BaseUser
 {
     /**
      * @ORM\Id
