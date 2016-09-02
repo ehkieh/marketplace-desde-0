@@ -69,22 +69,29 @@
                     <div id="navbar" class="navbar-collapse collapse" aria-expanded="false">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                {% if usuarioLogueado == null %}
-                                <a href="#">
-                                    <button type="button" class="btn btn-primary">Login con Facebook</button>
-                                </a>
+                                {% if app.user == null %}
+                                    <li>
+                                        <a href="{{ path('fos_user_security_login') }}">
+                                        <button type="button" class="btn btn-primary">Login</button>
+                                    </li>
+                                        </a>
+                                    <li>
+                                        <a href="{{ path('fos_user_registration_register') }}">
+                                        <button type="button" class="btn btn-default">Registro</button>
+                                         </a>
+                                    </li> 
                                 {% else %}
-                                    {{ usuarioLogueado.nombre }}
-                                    <a href="#">Desconectar</a>
+                                    <li>
+                                        <a href="#">
+                                        <button type="button" class="btn btn-primary">Publica un Trayecto</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('fos_user_security_logout') }}">
+                                            <button type="button" class="btn btn-default">{{ app.user.username }},Desconectar</button>
+                                        </a>
+                                    </li>
                                 {% endif %}
-                            </li>
-                            {% if usuarioLogueado != null %}
-                            <li>
-                                <a href="#">
-                                    <button type="button" class="btn btn-default">Publica un trayecto</button>
-                                </a>
-                            </li>
-                            {% endif %}
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
