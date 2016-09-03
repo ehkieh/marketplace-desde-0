@@ -14,4 +14,12 @@ class PublicController extends Controller
     {
         return $this->render('home/index.html.twig');
     }
+    
+    /**
+     * @Route("/list_Trayecto", name="public_list")
+    */
+    public function listAction(Request $request)
+    {
+        return $this->render('building/index.html.twig');
+    }
 }
