@@ -74,6 +74,7 @@ fos_user:
 # EasyAdmin Configuration
 easy_admin:
     entities:
+        Trayecto: AppBundle\Entity\Trayecto
         Persona:
             class: AppBundle\Entity\Persona
             form:
