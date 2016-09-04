@@ -32,7 +32,16 @@ class Persona extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        
+        $avatars= array (
+
+        "http://k33.kn3.net/taringa/E/3/2/B/1/2/StilesGamer/A14.png",
+        "http://4.bp.blogspot.com/-_WhTFJwOUBk/U3bVPcAxzmI/AAAAAAAA3os/KFnTnXfahjE/s1600/8ACVgddF.png",
+        "https://farm3.staticflickr.com/2898/14180990160_84d7fafd03_o.jpg",
+            );
+            
+        $indexSel= rand(0, count($avatars) -1);
+        $this->avatar = $avatars[$indexSel];
     }
 
     /**
