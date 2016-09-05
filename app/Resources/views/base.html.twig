@@ -55,7 +55,7 @@
                             <span class="icon-bar">
                             </span>
                         </button>
-                        <a href="#" class="navbar-brand logo logo-title">
+                        <a href="{{ path('public_home') }}" class="navbar-brand logo logo-title">
                             <!-- Original Logo will be placed here  -->
                             <span class="logo-icon">
                                 <i class="icon icon-search-1 ln-shadow-logo shape-0"></i>
@@ -82,7 +82,7 @@
                                     </li> 
                                 {% else %}
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ path('private_nuevoTrayecto') }}">
                                         <button type="button" class="btn btn-primary">Publica un Trayecto</button>
                                         </a>
                                     </li>
