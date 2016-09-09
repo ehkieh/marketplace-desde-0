@@ -40,6 +40,8 @@ class PrivateController extends Controller
         $nuevoTrayecto->setPrecio(($request->get('precio')));
         $nuevoTrayecto->setDescripcion(($request->get('descripcion')));
         $nuevoTrayecto->setPlazas(($request->get('plazas')));
+        $enabled=$request->get('enabled');
+        
         //Utilizamos el valor de User y lo almacenamos en la variable $usuarioLogueado
         $usuarioLogueado = $this->getUser();
         $nuevoTrayecto->setConductor($usuarioLogueado);

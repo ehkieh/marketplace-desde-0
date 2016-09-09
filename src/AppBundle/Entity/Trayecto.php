@@ -54,9 +54,15 @@ use ORMBehaviors\Timestampable\Timestampable;
      * @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
     */
     protected $conductor;
+    
+    /**
+     * @ORM\Column(type="boolean", options={"default": true}) 
+    */
+    protected $enabled;
 
     public function __construct()
     {
+        $this->enabled = true;
         $this->fechaDeViaje= New\DateTime();
         $this->horaDeViaje= New\DateTime();
     }
@@ -281,5 +287,28 @@ use ORMBehaviors\Timestampable\Timestampable;
     public function getConductor()
     {
         return $this->conductor;
+    }
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     * @return Trayecto
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Get enabled
+     *
+     * @return boolean 
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 }
