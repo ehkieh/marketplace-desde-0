@@ -74,11 +74,15 @@ fos_user:
 # EasyAdmin Configuration
 easy_admin:
     entities:
-        Trayecto: 
+        Ciudad:
+            class: AppBundle\Entity\Ciudad
+            form:
+                fields: ['nombre']
+        Trayecto:
             class: AppBundle\Entity\Trayecto
             form:
                 fields: ['enabled', 'origen', 'destino', 'calle', 'fechaDeViaje', 'horaDeViaje', 'precio', 'descripcion', 'plazas', 'conductor']
         Persona:
-            class: AppBundle\Entity\Persona
+            class: AppBundle\Entity\Persona    
             form:
                 fields: ['enabled', 'username', 'email', 'roles', 'lastLogin', 'trayectos', 'plainPassword']
