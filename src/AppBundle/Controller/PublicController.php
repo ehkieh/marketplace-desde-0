@@ -1,8 +1,13 @@
 <?php
+
 namespace AppBundle\Controller;
+
+use AppBundle\Entity\Persona;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
 class PublicController extends Controller
 {
     /**
@@ -81,10 +86,22 @@ class PublicController extends Controller
     /**
      *@Route("/terminos", name= "public_terminos")
     */
-    
-    public function terminosAction(Request $request)
+        public function terminosAction(Request $request)
     {
         return $this->render('terminos/index.html.twig');
     }
     
+    
+    /**
+     * @Route("/ficha/{persona}", name="ficha_Usuario")
+     * @ParamConverter("persona", class="AppBundle:Persona")
+    */
+        public function fichaDeUsuarioAction(Persona $persona)
+    {
+        
+         return $this->render('ficha/index.html.twig', array(
+            'persona' => $persona
+            ));
+
+    }
 }
