@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block contenido %}
+
+    <div class="main-container">
+        <div class="container">
+            <div class="row clearfix">
+                    
+                    {% include 'list/_trayecto.html.twig' %}
+
+
+                <br>
+                <a class="btn btn-block btn-primary text-center" href="{{ path('public_list') }}">Volver</a>
+
+                
+                </div>
+            </div>
+        </div>
+    
+{% endblock %}
