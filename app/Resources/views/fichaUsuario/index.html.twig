@@ -5,22 +5,26 @@
     <div class="main-container">
         <div class="container">
             <div class="row clearfix">
-                <h1 class="pull-left">{{ persona.username }}</h1>
-                <img width="200" height="200" class="pull-right" src="{{ persona.avatar }}"/>
-                <div style="clear:both"/>
-                <h2>{{ persona.trayectos|length }} Trayectos publicados.</h2>
+                <div class="row">
+                    
+                    <div class="col-md-3">
+                        <h1 class="pull-left">{{ persona.username }}</h1>
+                        <img width="200" height="200" class="pull-right" src="{{ persona.avatar }}"/>
+                    </div>
+                    
+                    <div class="col-md-9">
+                        <h2>{{ persona.trayectos|length }} Trayectos publicados.</h2>
 
-                {% for trayecto in persona.trayectos %}
-                    {% include 'list/_trayecto.html.twig' %}
-                {% endfor %}
+                        {% for trayecto in persona.trayectos %}
+                            {% include 'list/_trayecto.html.twig' %}
+                        {% endfor %}
+                        <br>
+                        <a class="btn btn-block btn-primary text-center" href="{{ path('public_list') }}">Volver</a>
+                    </div>
 
-                <br>
-            
-                <a class="btn btn-block btn-primary text-center" href="{{ path('public_list') }}">Volver</a>
-
-                
                 </div>
             </div>
         </div>
+    </div>
     
 {% endblock %}
